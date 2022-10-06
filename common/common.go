@@ -2,12 +2,9 @@
 package common
 
 import (
-	"crypto/rand"
 	"errors"
 	"fmt"
-	"log"
 	"math"
-	"math/big"
 	"strings"
 	"time"
 
@@ -53,16 +50,6 @@ func DateStringToMilliSeconds(date string) int64 {
 // DateTimeToMilliSeconds ...
 func DateTimeToMilliSeconds(date time.Time) int64 {
 	return date.UnixNano() / int64(time.Millisecond)
-}
-
-// SixDigits generate cashback code
-func SixDigits() int64 {
-	max := big.NewInt(999999)
-	n, err := rand.Int(rand.Reader, max)
-	if err != nil {
-		log.Panicf("ERROR: SixDigits(): %s", err.Error())
-	}
-	return n.Int64()
 }
 
 func OffsetRecord(page, size int64) int64 {
