@@ -22,7 +22,7 @@ var (
 func init() {
 	jktTimezone, _ := time.LoadLocation("Asia/Jakarta")
 	jsontime.AddTimeFormatAlias("datetime", constant.DATE_TIME_FORMAT)
-	jsontime.AddTimeFormatAlias("date", constant.DATE_FORMAT)
+	jsontime.AddTimeFormatAlias("date", constant.DATE_FORMAT_1)
 	jsontime.AddLocaleAlias("jkt", jktTimezone)
 }
 
